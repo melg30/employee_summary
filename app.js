@@ -68,73 +68,72 @@ function addEmployee() {
     });
 }
 
-function getEngineerdetails(){
-    inquirer
-  .prompt([
-    {
-      type: "imput",
-      name: "EngineerName",
-      message: "enter engineer name"
-    },
-    {
-      type: "imput",
-      name: "engineerID",
-      message: "enter engineer ID"
-    },
-    {
-      type: "imput",
-      name: "engineerEmail",
-      message: "enter engineer email"
-    }
-    {
-      type: "imput",
-      name: "engineerGithub",
-      message: "enter github user ID"
-    }
-  ])
-  .then(function(res) {
-    const engineer = new Engineer(
-      res.engineerName,
-      res.engineerID,
-      res.engineerEmail,
-      res.engineerGithub
-    );
-    employees.push(engineer);
-  });
+function getEngineerdetails() {
+  inquirer
+    .prompt([
+      {
+        type: "imput",
+        name: "EngineerName",
+        message: "enter engineer name"
+      },
+      {
+        type: "imput",
+        name: "engineerID",
+        message: "enter engineer ID"
+      },
+      {
+        type: "imput",
+        name: "engineerEmail",
+        message: "enter engineer email"
+      },
+      {
+        type: "imput",
+        name: "engineerGithub",
+        message: "enter github user ID"
+      }
+    ])
+    .then(function(res) {
+      const engineer = new Engineer(
+        res.engineerName,
+        res.engineerID,
+        res.engineerEmail,
+        res.engineerGithub
+      );
+      employees.push(engineer);
+    });
 
-
-function getInterndetails(){
+  function getInterndetails() {
     inquirer
-  .prompt([
-    {
-      type: "imput",
-      name: "InternName",
-      message: "enter interm name"
-    },
-    {
-      type: "imput",
-      name: "internID",
-      message: "enter intern ID"
-    },
-    {
-      type: "imput",
-      name: "internEmail",
-      message: "enter intern email"
-    },
-    {
-      type: "imput",
-      name: "internSchoolname",
-      message: "enter school name"
-    }
-  ])
-  .then(function(res) {
-    const intern = new Intern(
-      res.internName,
-      res.internID,
-      res.internEmail,
-      res.internSchoolname
-    );
-    employees.push(intern);
-  });
-}
+      .prompt([
+        {
+          type: "imput",
+          name: "InternName",
+          message: "enter interm name"
+        },
+        {
+          type: "imput",
+          name: "internID",
+          message: "enter intern ID"
+        },
+        {
+          type: "imput",
+          name: "internEmail",
+          message: "enter intern email"
+        },
+        {
+          type: "imput",
+          name: "internSchoolname",
+          message: "enter school name"
+        }
+      ])
+      .then(function(res) {
+        const intern = new Intern(
+          res.internName,
+          res.internID,
+          res.internEmail,
+          res.internSchoolname
+        );
+        employees.push(intern);
+      });
+  }
 }
